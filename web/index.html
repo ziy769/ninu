@@ -1,82 +1,257 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MyWebsite</title>
-    <!-- Tailwind + DaisyUI CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body class="bg-base-100 text-base-content">
-    <!-- Navbar -->
-    <div class="navbar bg-base-200 px-6 fixed">
-      <div class="flex-1">
-        <a class="btn btn-ghost text-xl">MyWebsite</a>
-      </div>
-      <div class="flex-none">
-        <ul class="menu menu-horizontal px-1">
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
+<html lang="id">
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero min-h-screen bg-base-100">
-      <div class="hero-content text-center">
-        <div class="max-w-md">
-          <h1 class="text-5xl font-bold">Welcome to MyWebsite</h1>
-          <p class="py-6">Build beautiful websites effortlessly using Tailwind and DaisyUI.</p>
-          <a href="#features" class="btn btn-primary">Get Started</a>
-        </div>
-      </div>
-    </section>
+<head>
+    <title>Yumi - Profile</title>
 
-    <!-- Features Section -->
-    <section id="features" class="py-16 bg-base-200">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-10">Features</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="card bg-base-100 shadow-xl">
-            <div class="card-body">
-              <h3 class="card-title">Fast Development</h3>
-              <p>Rapidly build and customize your UI with Tailwind CSS utility classes.</p>
-            </div>
-          </div>
-          <div class="card bg-base-100 shadow-xl">
-            <div class="card-body">
-              <h3 class="card-title">Beautiful UI</h3>
-              <p>DaisyUI components come styled and ready to use — just plug and play.</p>
-            </div>
-          </div>
-          <div class="card bg-base-100 shadow-xl">
-            <div class="card-body">
-              <h3 class="card-title">Fully Responsive</h3>
-              <p>Designed with mobile-first responsiveness in mind for all devices.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/x-icon" href="https://github.com/user-attachments/assets/b5feabb7-3f20-4028-9436-e3f3307dd2ae">
+    <meta name="description"
+        content="hello 👋 my name is Ahmad Wandi, I am a student at Antasari Banjarmasin State Islamic University, I really like machine learning">
+    <meta name="keywords" content="mayumiwandi, website, proxy, VPN, mayumi wandi, yumi, yui, mayumiyui">
+    <meta name="author" content="mayumiwandi" />
+    <meta name="copyright" content="© 2025 Yumi" />
 
-    <!-- Footer -->
-    <footer class="footer p-10 bg-base-300 text-base-content">
-      <aside>
-        <p>MyWebsite © 2025 - All rights reserved</p>
-      </aside>
-      <nav>
-        <h6 class="footer-title">Social</h6>
-        <div class="grid grid-flow-col gap-4">
-          <a href="#"
-            ><svg xmlns="http://www.w3.org/2000/svg" class="fill-current w-6 h-6" viewBox="0 0 24 24">
-              <path
-                d="M24 4.5a9.9 9.9 0 0 1-2.8.8 5 5 0 0 0 2.2-2.7 9.8 9.8 0 0 1-3.1 1.2 4.9 4.9 0 0 0-8.5 4.5A13.9 13.9 0 0 1 1.6 3.2a4.9 4.9 0 0 0 1.5 6.5A4.8 4.8 0 0 1 .9 9v.1a4.9 4.9 0 0 0 3.9 4.8 5 5 0 0 1-2.2.1 4.9 4.9 0 0 0 4.6 3.4 9.8 9.8 0 0 1-6.1 2.1A10 10 0 0 1 0 20a13.9 13.9 0 0 0 7.5 2.2c9 0 13.9-7.5 13.9-14v-.6A10 10 0 0 0 24 4.5z"
-              /></svg
-          ></a>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Yumi - Profile" />
+    <meta property="og:description"
+        content="hello, my name is Ahmad Wandi, I am a student at Antasari Banjarmasin State Islamic University, I really like machine learning" />
+    <meta property="og:url" content="https://mayumiwandi.github.io/" />
+    <meta property="og:site_name" content="Yumi - Profile" />
+    <meta property="og:image" content="https://github.com/user-attachments/assets/b5feabb7-3f20-4028-9436-e3f3307dd2ae" />
+    <meta property="og:locale" content="id_ID" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Yumi - Profile" />
+    <meta name="twitter:description"
+        content="hello, my name is Ahmad Wandi, I am a student at Antasari Banjarmasin State Islamic University, I really like machine learning" />
+    <meta name="twitter:image" content="https://github.com/user-attachments/assets/b5feabb7-3f20-4028-9436-e3f3307dd2ae" />
+    <meta name="twitter:site" content="@mayumiwandi" />
+    <meta name="twitter:creator" content="@mayumiwandi" />
+
+    <link rel="canonical" href="https://mayumiwandi.github.io/" />
+    <meta name="robots" content="index, follow" />
+    <meta name="geo.region" content="ID" />
+    <meta name="geo.placename" content="Indonesia" />
+
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <script src="https://kit.fontawesome.com/6fab3a0556.js" crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <style>
+        /* copyright Ahmad Wandi */
+
+        :root {
+            font-size: 62.5%;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+       
+        body {
+            background-image: url("https://i.postimg.cc/8zX0j4cX/frieren-buka.jpg"); /* https://i.postimg.cc/d01cfDkp/frieren-limited.jpg*/
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed; /* Added to make background fixed */
+            width: 100%;
+            min-height: 100vh; /* Ensure body takes at least full viewport height */
+            display: flex; /* Use flexbox */
+            flex-direction: column; /* Arrange children vertically */
+        }
+
+        main {
+            flex-grow: 1; /* Allow main to grow and push footer down */
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px; /* Add some padding to prevent content touching edges on small screens */
+        }
+
+        .container {
+            width: 28rem;
+            padding: 1rem 2rem;
+            background-color: rgba(255, 255, 255, 0.45);
+            border-radius: 2rem;
+            border: 0.1rem solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 0 1rem 0.1rem rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(1.5rem);
+            min-width: 25rem;
+            box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
+            max-width: 95%; /* Added max-width to prevent overflow on very small screens */
+        }
+
+        .image {
+            width: 40%;
+            height: auto;
+            border-radius: 5rem;
+            display: block;
+            margin: 1rem auto;
+        }
+
+        hr {
+            border-color: #673146;
+        }
+
+        h1,
+        .occupation {
+            text-align: center;
+        }
+
+        h1 {
+            font-family: Muli, sans-serif; /* Make sure Muli font is available or linked */
+            font-weight: 700;
+            font-size: 2.3rem;
+        }
+
+        .occupation {
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            font-family: "Space Mono", monospace; /* Make sure Space Mono font is available or linked */
+        }
+
+        .link-boxes {
+            margin: 2rem 1rem;
+            font-family: Muli, sans-serif; /* Make sure Muli font is available or linked */
+            font-weight: 700;
+            font-size: 1.4em;
+            text-transform: capitalize;
+
+        }
+
+        .link-boxes a {
+            text-decoration: none;
+            display: block;
+            color: #27213b;
+            border: 0.1rem solid #673146;
+            text-align: center;
+            margin: 0.7rem;
+            border-radius: 0.5rem;
+            padding: 0.3rem;
+            transition: all 200ms ease-in-out;
+            box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
+        }
+
+        .link-boxes a:hover {
+            border: 0.1rem solid #27213b;
+            background-color: #01bae9;
+            cursor: pointer;
+        }
+
+        .location {
+            text-align: center;
+            margin: 0.7rem;
+            font-size: 1.2rem;
+            font-family: "Space Mono", monospace; /* Make sure Space Mono font is available or linked */
+        }
+
+        footer {
+            width: 100%; /* Ensure footer takes full width */
+            margin-top: auto; /* Push footer to the bottom */
+            padding: 10px 0; /* Add some padding */
+            color: white; /* Set text color for footer */
+            /* Remove fixed positioning if using flexbox centering */
+            /* position: fixed;
+            bottom: 0;
+            left: 0; */
+        }
+
+        footer p {
+             /* Adjust styling for the paragraph inside footer if needed */
+            margin: 0; /* Remove default paragraph margin */
+            font-size: 1.6rem; /* Ukuran teks copyright di layar besar */
+            font-weight: bold; /* Optional: membuat teks jadi tebal */
+        }
+        .footer-yumi-link {
+            color: inherit; /* Menggunakan warna teks dari parent (warna putih footer) */
+            text-decoration: none; /* Menghilangkan garis bawah default */
+            /* Animasi saat perubahan warna dan garis bawah */
+            transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+        }
+        .footer-yumi-link:hover {
+            color: #01bae9; /* Ganti warna saat disorot, gunakan warna yang kontras */
+            text-decoration: underline; /* Tambahkan garis bawah saat disorot */
+            cursor: pointer; /* Mengubah kursor */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Horizontal offset, Vertical offset, Blur radius, Warna shadow */
+        }
+
+        @media only screen and (min-width:992px) {
+            .container {
+                width: 35rem; /* Allow slightly wider container on larger screens */
+            }
+
+            .image {
+                width: 30%; /* Slightly smaller image on larger screens relative to container */
+            }
+
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            .occupation {
+                font-size: 1.6rem;
+            }
+
+            .link-boxes {
+                font-size: 1.6em;
+            }
+
+            .location {
+                font-size: 1.4rem;
+            }
+
+            footer p {
+                 font-size: 1.6rem;
+            }
+        }
+    </style>
+
+    </head>
+
+<body>
+    <main>
+        <div class="container shadow">
+            <img class="image" src="https://i.postimg.cc/MHJ4zGHW/wandi-foto.png" alt="Wandi-Image" loading="lazy">
+            <h1> Yumi </h1>
+            <p class="occupation">I'am a student from Antasari State Islamic University</p>
+            <hr />
+            <div class="link-boxes">
+                <a class="shadow" title="View Yumi GitHub profile" href="https://github.com/mayumiwandi" target="_blank"><i
+                        class="fa fa-github icon" aria-hidden="true"></i> GitHub</a>
+
+                <a class="shadow" title="View Yumi Instagram profile" href="https://www.instagram.com/mayumiwandi/"
+                    target="_blank"><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</a>
+
+                <a class="shadow" title="View Yumi Facebook profile" href="https://www.facebook.com/mayumiwandi"
+                    target="_blank"><i class="fa-brands fa-facebook" aria-hidden="true"></i> Facebook</a>
+
+                <a class="shadow" title="Send Message Telegram" href="https://t.me/Yumi_yui" target="_blank"><i
+                        class="fa-solid fa-paper-plane" aria-hidden="true"></i> Telegram</a>
+
+                <a class="shadow" title="View Yumi Tiktok profile" href="https://www.tiktok.com/@mayumiwandi" target="_blank"><i
+                        class="fa-brands fa-tiktok" aria-hidden="true"></i> Tiktok</a>
+            </div>
+            <hr />
+            <p class="location"><i class="fa fa-map-marker icon" aria-hidden="true"> </i> Banjarmasin, Indonesia</p>
         </div>
-      </nav>
+    </main>
+    <footer class="text-center">
+        <p>&#169;
+          <a href="https://t.me/Yumi_yui" class="footer-yumi-link" title="Link terkait Yumi">Yumi</a>, 2025</p>
     </footer>
-  </body>
+</body>
 </html>
