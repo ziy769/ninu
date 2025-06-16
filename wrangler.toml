@@ -3,6 +3,9 @@ main = "build/worker/shim.mjs"
 compatibility_date = "2024-05-23"
 minify = true
 
+account_id = "39958b1f8f100e8ad0cb757652568d82"
+workers_dev = true
+
 [[kv_namespaces]]
 binding = "YUMI"
 id = "216a79ea5462492da7aa737cc8d7a2af"
