@@ -3,12 +3,12 @@ main = "build/worker/shim.mjs"
 compatibility_date = "2024-05-23"
 minify = true
 
-account_id = "39958b1f8f100e8ad0cb757652568d82"
+account_id = "05f49c4336ab8d1df4fabeeebbcdb083"
 workers_dev = true
 
 [[kv_namespaces]]
 binding = "YUMI"
-id = "216a79ea5462492da7aa737cc8d7a2af"
+id = "5067ad020c154b56966b5e6726f8bc4c"
 
 [build]
 command = "cargo install worker-build && worker-build --release"
@@ -17,6 +17,6 @@ command = "cargo install worker-build && worker-build --release"
 build = { command = "cargo install worker-build && worker-build --dev" }
 
 [vars]
-UUID = "f282b878-8711-45a1-8c69-5564172123c1"
-MAIN_PAGE_URL = "https://raw.githubusercontent.com/FoolVPN-ID/Siren/refs/heads/master/web/index.html"
-SUB_PAGE_URL = "https://raw.githubusercontent.com/FoolVPN-ID/Siren/refs/heads/master/web/sub.html"
+UUID = "aacac2d2-cac8-442a-9f2c-4e4f807065f5"
+MAIN_PAGE_URL = "https://raw.githubusercontent.com/Mayumiwandi/Changli/refs/heads/main/web/index.html"
+SUB_PAGE_URL = "https://raw.githubusercontent.com/Mayumiwandi/Changli/refs/heads/main/web/sub.html"
