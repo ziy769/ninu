@@ -16,6 +16,7 @@ routes = [
   { pattern = "cache.netflix.com.xinquins.dpdns.org", custom_domain = true },
   { pattern = "v.whatsapp.net.xinquins.dpdns.org", custom_domain = true },
   { pattern = "investor.fb.com.xinquins.dpdns.org", custom_domain = true },
+  ]
 
 [[kv_namespaces]]
 binding = "YUMI"
