@@ -6,7 +6,7 @@
     <link
       rel="icon"
       type="image/x-icon"
-      href="https://github.com/user-attachments/assets/b5feabb7-3f20-4028-9436-e3f3307dd2ae"
+      href="https://raw.githubusercontent.com/ziyosen/xproject-vpn/master/Screenshot_20250626-032808.png"
     />
     <meta
       name="viewport"
@@ -38,16 +38,15 @@
         font-family: "Inter", sans-serif;
       }
 
-      body 
-          #video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -1;
-}
+      body
+      {
+        background-image: url("https://raw.githubusercontent.com/ziyosen/xproject-vpn/master/Screenshot_20250626-032808.png");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: var(--light);
+        min-height: 100vh;
+      }
 
       .card {
         background: rgba(30, 41, 59, 0.6);
@@ -361,15 +360,6 @@
 
     </style>
   </head>
-  <video autoplay loop playsinline id="video-background">
-  <source src="https://raw.githubusercontent.com/ziyosen/xproject-vpn/master/VID_20250625_223027_757~2.mp4" type="video/mp4">
-</video>
-
-  <!-- Your existing content starts here -->
-  <div class="container mx-auto px-2 sm:px-4 py-4 sm:py-6 max-w-xl relative z-10">
-    <!-- Content continues normally -->
-  </div>
-</body>
 
   <body class="font-sans">
     <div class="container mx-auto px-2 sm:px-4 py-4 sm:py-6 max-w-xl">
