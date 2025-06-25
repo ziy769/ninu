@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Yumi - Proxy</title>
+    <title>cloudflare - Proxy</title>
     <link
       rel="icon"
       type="image/x-icon"
@@ -38,14 +38,16 @@
         font-family: "Inter", sans-serif;
       }
 
-      body {
-        background-image: url("https://i.postimg.cc/GtkMfsj8/wallhaven-3lv3q6.png");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        color: var(--light);
-        min-height: 100vh;
-      }
+      body 
+          #video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
 
       .card {
         background: rgba(30, 41, 59, 0.6);
@@ -356,8 +358,18 @@
         border: 1px solid rgba(99, 102, 241, 0.2);
         border-radius: 12px;
       }
+
     </style>
   </head>
+  <video autoplay loop playsinline id="video-background">
+  <source src="https://raw.githubusercontent.com/ziyosen/xproject-vpn/master/VID_20250625_223027_757~2.mp4" type="video/mp4">
+</video>
+
+  <!-- Your existing content starts here -->
+  <div class="container mx-auto px-2 sm:px-4 py-4 sm:py-6 max-w-xl relative z-10">
+    <!-- Content continues normally -->
+  </div>
+</body>
 
   <body class="font-sans">
     <div class="container mx-auto px-2 sm:px-4 py-4 sm:py-6 max-w-xl">
@@ -371,7 +383,7 @@
             <h1
               class="text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-emerald-400"
             >
-              Yumi-Proxy
+              Proxy Database
             </h1>
           </div>
         </div>
@@ -411,7 +423,7 @@
                   id="proxy-url"
                   class="flex-1 px-4 py-2.5 input rounded-l-lg text-sm"
                   placeholder="Enter custom proxy list URL"
-                  value="https://raw.githubusercontent.com/Mayumiwandi/Emilia/refs/heads/main/Data/alive.txt"
+                  value="https://raw.githubusercontent.com/ziyosen/serverless-tunnel-vpn/refs/heads/main/proxyList.txt"
                 />
                 <button
                   id="load-custom-url"
@@ -1324,34 +1336,15 @@
               </div>
               <span
                 class="text-lg font-semibold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-emerald-400"
-                >Yumi Proxy</span
+                >Benxx Project</span
               >
             </div>
-
+            
             <div class="flex gap-4">
-              <a
-                href="https://github.com/mayumiwandi"
-                class="w-8 h-8 rounded-full bg-slate-700/50 flex items-center justify-center text-gray-400 hover:text-indigo-400 hover:bg-slate-700 transition-all"
-              >
-                <i class="fab fa-github"></i>
-              </a>
-              <a
-                href="https://www.instagram.com/mayumi_wandi"
-                class="w-8 h-8 rounded-full bg-slate-700/50 flex items-center justify-center text-gray-400 hover:text-indigo-400 hover:bg-slate-700 transition-all"
-              >
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a
-                href="https://www.tiktok.com/@python_yumi"
-                class="w-8 h-8 rounded-full bg-slate-700/50 flex items-center justify-center text-gray-400 hover:text-indigo-400 hover:bg-slate-700 transition-all"
-              >
-                <i class="fa-brands fa-tiktok"></i>
-              </a>
-              <a
-                href="https://t.me/Yumi_yui"
-                class="w-8 h-8 rounded-full bg-slate-700/50 flex items-center justify-center text-gray-400 hover:text-indigo-400 hover:bg-slate-700 transition-all"
-              >
-                <i class="fab fa-telegram"></i>
+      <span><a href="https://xinquins.biz.id/api" target="_blank" rel="noopener noreferrer" style="font-family: 'Rajdhani', sans-serif;"><img src="https://bmkg.xyz/img/linksub.png" alt="menu" width="30"></a></span>
+             <span><a href="https://t.me/Bleszh" target="_blank" rel="noopener noreferrer" style="font-family: 'Rajdhani', sans-serif;"><img src="https://bmkg.xyz/img/tele.png" alt="menu" width="30"></a></span>
+                    <span><a href="https://www.benxx.dpdns.org" target="_self" rel="noopener noreferrer">
+    <img src="https://bmkg.xyz/img/home.png" alt="menu" width="30"></a></span>
               </a>
             </div>
           </div>
@@ -1361,7 +1354,7 @@
           ></div>
 
           <div class="text-center text-gray-500 text-xs">
-            <p>© 2025 Yumi Proxy | Secure Connection Technology</p>
+            <p>© 2025 Benxx project | Secure Connection Technology</p>
             <p class="mt-1 flex items-center justify-center">
               Dibuat dengan
               <i class="fas fa-heart text-rose-500 mx-1"></i>
@@ -1384,17 +1377,13 @@
 
     <div id="donation-button" class="fixed bottom-6 right-6 z-[1000]">
       <a
-        href="https://trakteer.id/mayumiwandi/tip"
+        href="https://saweria.co/ziyosen"
         target="_blank"
         class="w-12 h-12 rounded-full donation-btn flex items-center justify-center shadow-lg"
       >
         <i class="fas fa-hand-holding-heart text-white text-lg"></i>
       </a>
     </div>
-
-    <p class="text-white-400 text-xs text-center">
-      Klik tombol di atas untuk memberikan dukungan 💖
-    </p>
 
     <script>
       // Global variables
@@ -1403,7 +1392,7 @@
       let selectedProxy = null;
       const defaultProxyUrl =
         "https://raw.githubusercontent.com/Mayumiwandi/Emilia/refs/heads/main/Data/alive.txt";
-      const serverDomains = ["changli.fapowi.workers.dev"];
+      const serverDomains = ["xinquins.dpdns.org"];
       let selectedServerDomain = serverDomains[0]; // Default to first domain
       const defaultUUID = "aacac2d2-cac8-442a-9f2c-4e4f807065f5";
       const itemsPerPage = 10;
