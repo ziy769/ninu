@@ -7,6 +7,7 @@ account_id = "ea1aab81dc8e22018131832d124a54fc"
 workers_dev = true
 
 routes = [
+  { pattern = "xinquins.dpdns.org", custom_domain = true },
   { pattern = "blog.webex.com.xinquins.dpdns.org", custom_domain = true },
   { pattern = "ava.game.naver.com.xinquins.dpdns.org", custom_domain = true },
   { pattern = "quiz.vidio.com.xinquins.dpdns.org", custom_domain = true },
