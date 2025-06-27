@@ -4,7 +4,7 @@ compatibility_date = "2024-05-23"
 minify = true
 
 account_id = "ea1aab81dc8e22018131832d124a54fc"
-workers_dev = "xinquins.dpdns.org"true
+workers_dev = "xinquins.dpdns.org" true
 
 [[kv_namespaces]]
 binding = "YUMI"
