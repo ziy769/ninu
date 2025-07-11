@@ -896,21 +896,30 @@ select.form-control {
     // Create VMess config object
     function createVMessConfig(uuid, domain, host, sni, proxyHost, proxyPort, countryCode, isp, tls) {
     return {
-        v: "2",
-        ps: `${countryCode} - ${isp} [ VMESS - ${tls ? 'TLS' : 'NTLS'} ]`,
-        add: domain,
-        port: tls ? 443 : 80,
-        id: uuid,
-        aid: "0",
-        net: "ws",
-        type: "none",
-        scy: "zero",
-        host: host,
-        path: `/${proxyHost}-${proxyPort}`,
-        tls: tls ? "tls" : "none",
-        sni: sni,
-        fp: "randomized"
+       v: "2",
+                ps: formData.get("name"),
+                add: server,
+                port: port,
+                id: formData.get("uuid"),
+                aid: "0",
+                net: "ws", // Always WebSocket
+                type: "none",
+                host: host,
+                path: /${proxyHost}-${proxyPort}`,
+                tls: security === "tls" ? "tls" : "",
+                sni: sni,
+                scy: "zero",
     };
+}
+connectionUrl = "vmess://" + btoa(JSON.stringify(vmessConfig));
+            } else if (formType === "vless") {
+              const uuid = formData.get("uuid");
+              const path = encodeURIComponent(formData.get("path"));
+              const security = formData.get("security");
+              const encryption = "none";
+              const name = encodeURIComponent(formData.get("name"));
+              // Set port based on TLS setting
+              const port = security === "tls" ? 443 : 80;
 }
     
     // Format label with protocol and TLS info
@@ -1379,7 +1388,7 @@ async function generateV2raySub(type, uuid, bugType, mainDomain, customBugs, tls
             }
             
             // Return a single Clash configuration with all proxies
-            return `#Inconigto-Mode\nproxies:\n${allProxies.join('\n')}`;
+            return `#Benxx Project\nproxies:\n${allProxies.join('\n')}`;
         } 
         
         // For Nekobox format
