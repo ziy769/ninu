@@ -846,7 +846,7 @@ select.form-control {
     // Constants
     const DEFAULT_PROXY_BANK_URL = 'https://raw.githubusercontent.com/h58fmb0344g9h3/p57gdv3j3n0vg334/refs/heads/main/f74bjd2h2ko99f3j5';
     const PROXY_CHECK_API_URL = 'https://apicek.t-me-inconigto.workers.dev/proxy';
-    const PATH_PREFIX = 'Inconigto-Mode'; // Hardcoded path prefix
+    
     const MainDomains = [
         'xinquins.dpdns.org',
         'benxx.dpdns.org',
@@ -906,7 +906,7 @@ select.form-control {
         type: "none",
         scy: "zero",
         host: host,
-        path: `/${PATH_PREFIX}/${proxyHost}-${proxyPort}`,
+        path: `/${proxyHost}-${proxyPort}`,
         tls: tls ? "tls" : "none",
         sni: sni,
         fp: "randomized"
@@ -987,7 +987,7 @@ function generateClashVLESS(name, uuid, domain, host, sni, proxyHost, proxyPort,
   network: ws
   servername: ${sni}
   ws-opts:
-    path: /${PATH_PREFIX}/${proxyHost}-${proxyPort}
+    path: /${proxyHost}-${proxyPort}
     headers:
       Host: ${host}`;
 }
@@ -1004,7 +1004,7 @@ function generateClashTrojan(name, uuid, domain, host, sni, proxyHost, proxyPort
   network: ws
   sni: ${sni}
   ws-opts:
-    path: /${PATH_PREFIX}/${proxyHost}-${proxyPort}
+    path: /${proxyHost}-${proxyPort}
     headers:
       Host: ${host}`;
 }
@@ -1023,7 +1023,7 @@ function generateClashSS(name, uuid, domain, host, sni, proxyHost, proxyPort, tl
   plugin-opts:
     mode: websocket
     host: ${host}
-    path: /${PATH_PREFIX}/${proxyHost}-${proxyPort}
+    path: /${proxyHost}-${proxyPort}
     tls: ${tls}
     mux: false
     skip-cert-verify: true
@@ -1048,7 +1048,7 @@ function generateClashVMess(name, uuid, domain, host, sni, proxyHost, proxyPort,
   servername: ${sni}
   network: ws
   ws-opts:
-    path: /${PATH_PREFIX}/${proxyHost}-${proxyPort}
+    path: /${proxyHost}-${proxyPort}
     headers:
       Host: ${host}
   udp: true`;
@@ -1080,7 +1080,7 @@ function generateNekoboxConfig(name, uuid, domain, host, sni, proxyHost, proxyPo
           "Host": "${host}"
         },
         "max_early_data": 0,
-        "path": "/${PATH_PREFIX}/${proxyHost}-${proxyPort}",
+        "path": "/${proxyHost}-${proxyPort}",
         "type": "ws"
       },
       "type": "vless",
@@ -1104,7 +1104,7 @@ function generateNekoboxConfig(name, uuid, domain, host, sni, proxyHost, proxyPo
           "Host": "${host}"
         },
         "max_early_data": 0,
-        "path": "/${PATH_PREFIX}/${proxyHost}-${proxyPort}",
+        "path": "/${proxyHost}-${proxyPort}",
         "type": "ws"
       },
       "type": "trojan"
@@ -1118,7 +1118,7 @@ function generateNekoboxConfig(name, uuid, domain, host, sni, proxyHost, proxyPo
       "method": "none",
       "password": "${uuid}",
       "plugin": "v2ray-plugin",
-      "plugin_opts": "mux=0;path=/${PATH_PREFIX}/${proxyHost}-${proxyPort};host=${host};tls=${tls ? '1' : '0'}"
+      "plugin_opts": "mux=0;path=/${proxyHost}-${proxyPort};host=${host};tls=${tls ? '1' : '0'}"
     }`;
     } else if (type === 'vmess') {
         config = `{
@@ -1131,7 +1131,7 @@ function generateNekoboxConfig(name, uuid, domain, host, sni, proxyHost, proxyPo
     "headers": {
       "Host": "${host}"
     },
-    "path": "/${PATH_PREFIX}/${proxyHost}-${proxyPort}",
+    "path": "/${proxyHost}-${proxyPort}",
     "type": "ws"
   },
   "uuid": "${uuid}",
@@ -1463,7 +1463,7 @@ async function generateV2raySub(type, uuid, bugType, mainDomain, customBugs, tls
             }
             
             // Create the full Nekobox configuration
-            return `##INCONIGTO-MODE##
+            return `##Benxx Project##
 {
   "dns": {
     "final": "dns-final",
@@ -1670,7 +1670,7 @@ ${allProxies.join(',\n')},
                     switch (type) {
                         case 'vless': 
                             const vlessLabel = formatLabel(countryCode, isp, 'VLESS', tls);
-                            config = `vless://${uuid}@${bugDomain}:${tls ? 443 : 80}?encryption=none&security=${tls ? 'tls' : 'none'}&type=ws&host=${bugHost}&path=%2F${PATH_PREFIX}%2F${proxyHost}-${proxyPort}&sni=${bugSni}#${encodeURIComponent(vlessLabel)}`;
+                            config = `vless://${uuid}@${bugDomain}:${tls ? 443 : 80}?encryption=none&security=${tls ? 'tls' : 'none'}&type=ws&host=${bugHost}&path=%2F${proxyHost}-${proxyPort}&sni=${bugSni}#${encodeURIComponent(vlessLabel)}`;
                             break;
                         
                         case 'vmess': 
@@ -1681,13 +1681,13 @@ ${allProxies.join(',\n')},
                         
                         case 'trojan': 
                             const trojanLabel = formatLabel(countryCode, isp, 'TROJAN', tls);
-                            config = `trojan://${uuid}@${bugDomain}:${tls ? 443 : 80}?security=${tls ? 'tls' : 'none'}&type=ws&host=${bugHost}&path=%2F${PATH_PREFIX}%2F${proxyHost}-${proxyPort}&sni=${bugSni}#${encodeURIComponent(trojanLabel)}`;
+                            config = `trojan://${uuid}@${bugDomain}:${tls ? 443 : 80}?security=${tls ? 'tls' : 'none'}&type=ws&host=${bugHost}&path=%2F${proxyHost}-${proxyPort}&sni=${bugSni}#${encodeURIComponent(trojanLabel)}`;
                             break;
                         
                         case 'shadowsocks': 
                             const ssLabel = formatLabel(countryCode, isp, 'SS', tls);
                             const ssAuth = `none:${uuid}`;
-                            config = `ss://${safeBase64Encode(ssAuth)}@${bugDomain}:${tls ? 443 : 80}?encryption=none&security=${tls ? 'tls' : 'none'}&type=ws&host=${bugHost}&path=%2F${PATH_PREFIX}%2F${proxyHost}-${proxyPort}&sni=${bugSni}#${encodeURIComponent(ssLabel)}`;
+                            config = `ss://${safeBase64Encode(ssAuth)}@${bugDomain}:${tls ? 443 : 80}?encryption=none&security=${tls ? 'tls' : 'none'}&type=ws&host=${bugHost}&path=%2F${proxyHost}-${proxyPort}&sni=${bugSni}#${encodeURIComponent(ssLabel)}`;
                             break;
                         
                         case 'mix': 
@@ -1702,10 +1702,10 @@ ${allProxies.join(',\n')},
                             const ssAuthMix = `none:${uuid}`;
 
                             config = [
-                                `vless://${uuid}@${bugDomain}:${tls ? 443 : 80}?encryption=none&security=${tls ? 'tls' : 'none'}&type=ws&host=${bugHost}&path=%2F${PATH_PREFIX}%2F${proxyHost}-${proxyPort}&sni=${bugSni}#${encodeURIComponent(vlessLabelMix)}`,
+                                `vless://${uuid}@${bugDomain}:${tls ? 443 : 80}?encryption=none&security=${tls ? 'tls' : 'none'}&type=ws&host=${bugHost}&path=%2F${proxyHost}-${proxyPort}&sni=${bugSni}#${encodeURIComponent(vlessLabelMix)}`,
                                 `vmess://${safeBase64Encode(vmessStringMix)}`,
-                                `trojan://${uuid}@${bugDomain}:${tls ? 443 : 80}?security=${tls ? 'tls' : 'none'}&type=ws&host=${bugHost}&path=%2F${PATH_PREFIX}%2F${proxyHost}-${proxyPort}&sni=${bugSni}#${encodeURIComponent(trojanLabelMix)}`,
-                                `ss://${safeBase64Encode(ssAuthMix)}@${bugDomain}:${tls ? 443 : 80}?encryption=none&security=${tls ? 'tls' : 'none'}&type=ws&host=${bugHost}&path=%2F${PATH_PREFIX}%2F${proxyHost}-${proxyPort}&sni=${bugSni}#${encodeURIComponent(ssLabelMix)}`
+                                `trojan://${uuid}@${bugDomain}:${tls ? 443 : 80}?security=${tls ? 'tls' : 'none'}&type=ws&host=${bugHost}&path=%2F${proxyHost}-${proxyPort}&sni=${bugSni}#${encodeURIComponent(trojanLabelMix)}`,
+                                `ss://${safeBase64Encode(ssAuthMix)}@${bugDomain}:${tls ? 443 : 80}?encryption=none&security=${tls ? 'tls' : 'none'}&type=ws&host=${bugHost}&path=%2F${proxyHost}-${proxyPort}&sni=${bugSni}#${encodeURIComponent(ssLabelMix)}`
                             ].join('\n');
                             break;
                     }
