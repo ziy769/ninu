@@ -897,18 +897,18 @@ select.form-control {
     function createVMessConfig(uuid, domain, host, sni, proxyHost, proxyPort, countryCode, isp, tls) {
     return {
        v: "2",
-                ps: formData.get("name"),
-                add: server,
-                port: port,
-                id: formData.get("uuid"),
-                aid: "0",
-                net: "ws", // Always WebSocket
-                type: "none",
-                host: host,
-                path: /${proxyHost}-${proxyPort}`,
-                tls: security === "tls" ? "tls" : "",
-                sni: sni,
-                scy: "zero",
+        ps: `${countryCode} - ${isp} [ VMESS - ${tls ? 'TLS' : 'NTLS'} ]`,
+        add: domain,
+        port: tls ? 443 : 80,
+        id: uuid,
+        aid: "0",
+        net: "ws",
+        type: "none",
+        scy: "zero",
+        host: host,
+        path: `/${proxyHost}-${proxyPort}`,
+        tls: tls ? "tls" : "none",
+        sni: sni,
     };
 }
     
