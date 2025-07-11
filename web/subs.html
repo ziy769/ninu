@@ -852,16 +852,7 @@ select.form-control {
         'benxx.dpdns.org',
     ];
 
-    const CustomBugs = [];
-    
-    // Helper Functions
-    function generateUUIDv4() {
-        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-            const r = Math.random() * 16 | 0;
-            const v = c === 'x' ? r : (r & 0x3 | 0x8);
-            return v.toString(16);
-        });
-    }
+  const CustomBugs = [];
     
     // Safe base64 encoding function
     function safeBase64Encode(str) {
@@ -876,27 +867,27 @@ select.form-control {
     }
     
     // Check if proxy is valid via API
-    async function checkProxyValidity(ip, port) {
-        try {
-            const response = await fetch(`${PROXY_CHECK_API_URL}?ip=${ip}&port=${port}`);
-            
-            if (!response.ok) {
-                console.error(`API error: ${response.status}`);
-                return false;
-            }
-            
-            const data = await response.json();
-            return data.proxyip === true;
-        } catch (error) {
-            console.error("Error checking proxy:", error);
+async function checkProxyValidity(ip, port) {
+    try {
+        const response = await fetch(`${PROXY_CHECK_API_URL}?ip=${ip}:${port}`);
+        
+        if (!response.ok) {
+            console.error(`API error: ${response.status}`);
             return false;
         }
+        
+        const data = await response.json();
+        return data.status && data.status.toUpperCase() === "ACTIVE";
+    } catch (error) {
+        console.error("Error checking proxy:", error);
+        return false;
     }
-    
+}
+
     // Create VMess config object
     function createVMessConfig(uuid, domain, host, sni, proxyHost, proxyPort, countryCode, isp, tls) {
     return {
-       v: "2",
+        v: "2",
         ps: `${countryCode} - ${isp} [ VMESS - ${tls ? 'TLS' : 'NTLS'} ]`,
         add: domain,
         port: tls ? 443 : 80,
@@ -909,6 +900,7 @@ select.form-control {
         path: `/${proxyHost}-${proxyPort}`,
         tls: tls ? "tls" : "none",
         sni: sni,
+        fp: "randomized"
     };
 }
     
