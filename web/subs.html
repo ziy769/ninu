@@ -911,16 +911,6 @@ select.form-control {
                 scy: "zero",
     };
 }
-connectionUrl = "vmess://" + btoa(JSON.stringify(vmessConfig));
-            } else if (formType === "vless") {
-              const uuid = formData.get("uuid");
-              const path = encodeURIComponent(formData.get("path"));
-              const security = formData.get("security");
-              const encryption = "none";
-              const name = encodeURIComponent(formData.get("name"));
-              // Set port based on TLS setting
-              const port = security === "tls" ? 443 : 80;
-}
     
     // Format label with protocol and TLS info
     function formatLabel(countryCode, isp, protocol, tls) {
