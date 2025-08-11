@@ -40,7 +40,7 @@
 
       body
       {
-        background-image: url("https://raw.githubusercontent.com/ziyosen/xproject-vpn/master/Screenshot_20250626-032808.png");
+        /* background-image removed */
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -358,10 +358,48 @@
         border-radius: 12px;
       }
 
-    </style>
+    
+  #bg-video {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* supaya tidak ngezoom */
+    background: black;
+    z-index: -1;
+    pointer-events: none;
+  }
+  #unmute-btn {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 9999;
+    display: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 0.95rem;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+</style>
   </head>
 
   <body class="font-sans">
+
+<video id="bg-video"
+       playsinline
+       autoplay
+       loop
+       preload="auto"
+       crossorigin="anonymous"
+       src="https://raw.githubusercontent.com/ziyosen/Lopee/main/VID_20250811_034921_989.mp4">
+</video>
+<button id="unmute-btn">Nyalakan Suara</button>
+
     <div class="container mx-auto px-2 sm:px-4 py-4 sm:py-6 max-w-xl">
       <div class="card overflow-hidden">
         <!-- Header -->
@@ -2421,5 +2459,38 @@
           });
       }
     </script>
-  </body>
+  
+<script>
+(function(){
+  const video = document.getElementById('bg-video');
+  const btn = document.getElementById('unmute-btn');
+  video.volume = 0.6;
+
+  function tryAutoplayWithSound() {
+    video.play().then(() => {
+      btn.style.display = 'none';
+    }).catch(() => {
+      video.muted = true;
+      video.play();
+      btn.style.display = 'block';
+    });
+  }
+
+  btn.addEventListener('click', function () {
+    video.muted = false;
+    video.volume = 0.7;
+    video.play().then(() => {
+      btn.style.display = 'none';
+    });
+  });
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', tryAutoplayWithSound);
+  } else {
+    tryAutoplayWithSound();
+  }
+})();
+</script>
+
+</body>
 </html>
