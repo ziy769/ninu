@@ -2375,37 +2375,40 @@ function checkProxyStatus(proxy) {
   const statusUnknown = document.getElementById("proxy-status-unknown")
   const latencyElement = document.getElementById("proxy-latency")
 
+  // Show status container and loading state
+  statusContainer.classList.remove("hidden")
+  statusLoading.classList.remove("hidden")
+  statusActive.classList.add("hidden")
+  statusDead.classList.add("hidden")
+  statusUnknown.classList.add("hidden")
 
-        // Show status container and loading state
-        statusContainer.classList.remove("hidden");
-        statusLoading.classList.remove("hidden");
-        statusActive.classList.add("hidden");
-        statusDead.classList.add("hidden");
-        statusUnknown.classList.add("hidden");
+  fetch(statusURL)
+    .then((response) => response.json())
+    .then((data) => {
+      const endTime = performance.now()
+      const latency = Math.floor(endTime - startTime)
 
-        fetch(statusURL)
-          .then((response) => response.json())
-          .then((data) => {
-            const endTime = performance.now();
-            let latency = Math.floor(endTime - startTime);
+      // Hide loading state
+      statusLoading.classList.add("hidden")
 
-            // Hide loading state
-            statusLoading.classList.add("hidden");
+      // Handle the new format where data is an array
+      const proxyData = Array.isArray(data) ? data[0] : data
 
-            if (data.proxyip === true) {
-              statusActive.classList.remove("hidden");
-              latencyElement.textContent = `${latency}ms`;
-            } else {
-              statusDead.classList.remove("hidden");
-            }
-          })
-          .catch((error) => {
-            // Hide loading state
-            statusLoading.classList.add("hidden");
-            statusUnknown.classList.remove("hidden");
-            console.error("Fetch error:", error);
-          });
+      if (proxyData && proxyData.proxyip === true) {
+        statusActive.classList.remove("hidden")
+        latencyElement.textContent = `${latency}ms`
+      } else {
+        statusDead.classList.remove("hidden")
       }
+    })
+    .catch((error) => {
+      // Hide loading state
+      statusLoading.classList.add("hidden")
+      statusUnknown.classList.remove("hidden")
+      console.error("Fetch error:", error)
+    })
+}
+
 
       // Function to show proxy list section
       function showProxyListSection() {
