@@ -2181,7 +2181,7 @@
       // Function to check proxy status in the list
       function checkProxyStatusInList(proxy, statusBadge) {
         //Api Check Healt
-        const statusURL = `https://yumiwolker.mayumiyui.workers.dev/check?target=${proxy.ip}:${proxy.port}`;
+        const statusURL = `https://afrcloud.dpdns.org/${proxy.ip}:${proxy.port}`;
 
         fetch(statusURL)
           .then((response) => response.json())
@@ -2368,7 +2368,7 @@
       // Function to check proxy status in the account creation section
       function checkProxyStatus(proxy) {
         const startTime = performance.now();
-        const statusURL = `https://yumiwolker.mayumiyui.workers.dev/check?target=${proxy.ip}:${proxy.port}`;
+        const statusURL = `https://afrcloud.dpdns.org/${proxy.ip}:${proxy.port}`;
         const statusContainer = document.getElementById(
           "proxy-status-container"
         );
