@@ -1759,8 +1759,8 @@ async function generateV2raySub(type, uuid, bugType, mainDomain, customBugs, tls
   ],
   "outbounds": [
     {
-      "tag": "selector",
-      "type": "🌐Internet",
+      "tag": "🌐Internet",
+      "type": "selector",
       "outbounds": [
         "Best Latency",
 ${proxyTags.join('\n')}
@@ -1768,8 +1768,8 @@ ${proxyTags.join('\n')}
       ]
     },
     {
-      "type": "Best Latency",
-      "tag": "🚀urltest",
+      "type": "🚀urltest",
+      "tag": "Best Latency",
       "outbounds": [
 ${proxyTags.join('\n')}
         "direct"
